@@ -3,16 +3,23 @@ import Button from "../component/Button";
 
 import data from "../question.json";
 
+interface Question {
+    id: number,
+    question: string;
+  options: string[];
+  answer: string;
+}
+
 export default function Quiz() {
 
-    const [questionIndex, setQuestionIndex] = useState(0);
-    const [score, setScore] = useState(0)
-    const [isEnd, setIsEnd] = useState(false);
+    const [questionIndex, setQuestionIndex] = useState<number>(0);
+    const [score, setScore] = useState<number>(0)
+    const [isEnd, setIsEnd] = useState<boolean>(false);
 
 
-    const currentData = data[questionIndex]
+    const currentData : Question = data[questionIndex]
 
-    const maxLength = data.length;
+    const maxLength : number = data.length;
 
 
 
@@ -27,7 +34,7 @@ export default function Quiz() {
             <p className="text-center text-2xl mb-4">{currentData.question}</p>
             <div className="flex flex-col gap-2 items-center justify-center">
 
-            {currentData.options.map((variant) => {
+            {currentData.options.map((variant : string) => {
                 return <Button key={variant} onClick={() => {
                     if(variant === currentData.answer)
                     {
