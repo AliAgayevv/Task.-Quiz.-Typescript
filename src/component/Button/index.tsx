@@ -1,4 +1,4 @@
-import React, { ReactEventHandler, ReactNode } from 'react'
+import  {ReactNode } from 'react'
 
 interface ButtonProps {
     children: ReactNode,

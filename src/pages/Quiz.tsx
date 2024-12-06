@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "../component/Button";
 
 import data from "../question.json";
@@ -9,7 +9,6 @@ export default function Quiz() {
     const [score, setScore] = useState(0)
     const [isEnd, setIsEnd] = useState(false);
 
-    const selectedVariants = [];
 
     const currentData = data[questionIndex]
 
